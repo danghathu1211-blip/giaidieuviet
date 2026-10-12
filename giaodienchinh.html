@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giai Điệu Việt – Âm nhạc kết nối các thế hệ</title>
+  <meta name="description" content="Giai Điệu Việt – chuyên trang về âm nhạc và văn hóa âm nhạc Việt Nam.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&family=Noto+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/effects.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a href="#" class="logo" aria-label="Giai Điệu Việt">
+      <svg class="logo-icon" viewBox="0 0 64 64" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+          <path d="M44 6 L28 30"/>
+          <path d="M40 4 L48 10"/>
+        </g>
+        <ellipse cx="22" cy="42" rx="14" ry="16" transform="rotate(35 22 42)" fill="currentColor"/>
+        <circle cx="21" cy="42" r="3.5" fill="#f8f1ea"/>
+        <path d="M6 54 C20 62 40 58 60 44" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text"><span class="logo-top">GIAI ĐIỆU</span><span class="logo-bottom">VIỆT</span></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Mở menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="#" class="active">Trang chủ</a></li>
+        <li><a href="#chuyen-muc" data-cat="dong-chay">Dòng chảy</a></li>
+        <li><a href="#chuyen-muc" data-cat="guong-mat">Gương mặt</a></li>
+        <li><a href="#chuyen-muc" data-cat="tac-pham">Tác phẩm</a></li>
+        <li><a href="#chuyen-muc" data-cat="van-hoa">Văn hóa</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-tools">
+      <form class="search-box" id="searchForm" role="search">
+        <input type="text" id="searchInput" placeholder="Tìm kiếm..." aria-label="Tìm kiếm">
+        <button type="submit" aria-label="Tìm"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+      </form>
+      <div class="socials">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.200 0-7.800.4A2.5 2.5 0 0 0 2.400 7.200C2 8.800 2 12 2 12s0 3.200.4 4.800a2.500 2.500 0 0 0 1.800 1.800C5.800 19 12 19 12 19s6.200 0 7.800-.4a2.500 2.500 0 0 0 1.800-1.800C22 15.200 22 12 22 12s0-3.200-.4-4.800zM10 15V9l5.200 3z"/></svg></a>
+        <a href="#" aria-label="Spotify"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.600 14.400a.6.6 0 0 1-.8.2c-2.200-1.300-4.900-1.600-8.100-.9a.6.6 0 1 1-.3-1.200c3.500-.8 6.500-.5 9 1a.6.6 0 0 1 .2.9zm1.200-2.700a.8.8 0 0 1-1 .3c-2.500-1.500-6.300-2-9.200-1.100a.8.8 0 0 1-.5-1.500c3.400-1 7.600-.5 10.500 1.300.4.200.5.700.2 1zm.1-2.800C14.900 9.100 10 8.900 7.200 9.800a1 1 0 1 1-.6-1.900c3.200-1 8.600-.8 12 1.200a1 1 0 0 1-1 1.800z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- ================= HERO SLIDER ================= -->
+  <section class="hero" id="hero" aria-label="Bài viết nổi bật">
+    <div class="hero-track">
+      <article class="hero-slide active" data-bg="s1" data-href="baiviet.html">
+        <div class="hero-content">
+          <span class="tag tag-red">DÒNG CHẢY</span>
+          <h1><a href="baiviet.html">Từ dân ca đến V-pop:<br><span>Hành trình của âm nhạc Việt Nam</span></a></h1>
+          <p>Từ những làn điệu dân ca mộc mạc, qua những giai điệu trữ tình của tân nhạc, đến sự bùng nổ của V-pop hiện đại – âm nhạc Việt Nam là một dòng chảy không ngừng nghỉ...</p>
+          <a href="baiviet.html" class="read-more">Đọc tiếp <span class="arrow">→</span></a>
+        </div>
+        <div class="hero-visual">
+          <div class="collage c1"></div><div class="collage c2"></div><div class="collage c3"></div>
+          <div class="hero-quote">Âm nhạc<br>kết nối<br>các thế hệ</div>
+        </div>
+      </article>
+
+      <article class="hero-slide" data-bg="s2" data-href="trinhcongson.html">
+        <div class="hero-content">
+          <span class="tag tag-gold">GƯƠNG MẶT</span>
+          <h1><a href="trinhcongson.html">Trịnh Công Sơn:<br><span>Người nhạc sĩ của những khúc tình ca bất tử</span></a></h1>
+          <p>Những ca từ như thơ, những giai điệu thấm đẫm triết lý nhân sinh – nhạc Trịnh vẫn sống mãi trong tâm hồn nhiều thế hệ người Việt...</p>
+          <a href="trinhcongson.html" class="read-more">Đọc tiếp <span class="arrow">→</span></a>
+        </div>
+        <div class="hero-visual"><div class="hero-quote">Tình ca<br>không tuổi</div></div>
+      </article>
+
+      <article class="hero-slide" data-bg="s3" data-href="cakhuc.html">
+        <div class="hero-content">
+          <span class="tag tag-red">TÁC PHẨM</span>
+          <h1><a href="cakhuc.html">Những ca khúc<br><span>trở thành ký ức của cả một thời</span></a></h1>
+          <p>Có những bài hát không chỉ để nghe, mà còn để nhớ, để sống lại những khoảnh khắc đã đi qua trong đời mỗi người...</p>
+          <a href="cakhuc.html" class="read-more">Đọc tiếp <span class="arrow">→</span></a>
+        </div>
+        <div class="hero-visual"><div class="hero-quote">Ký ức<br>còn vang</div></div>
+      </article>
+
+      <article class="hero-slide" data-bg="s4" data-href="concert.html">
+        <div class="hero-content">
+          <span class="tag tag-green">VĂN HÓA</span>
+          <h1><a href="concert.html">Văn hóa concert:<br><span>Khi âm nhạc trở thành lễ hội</span></a></h1>
+          <p>Từ những sân khấu nhỏ đến những đại nhạc hội quy mô lớn, concert đang định hình lại cách giới trẻ Việt Nam thưởng thức âm nhạc...</p>
+          <a href="concert.html" class="read-more">Đọc tiếp <span class="arrow">→</span></a>
+        </div>
+        <div class="hero-visual"><div class="hero-quote">Cùng hát<br>cùng sống</div></div>
+      </article>
+    </div>
+
+    <button class="hero-arrow prev" aria-label="Slide trước">&#10094;</button>
+    <button class="hero-arrow next" aria-label="Slide sau">&#10095;</button>
+    <div class="hero-dots" role="tablist"></div>
+  </section>
+
+  <!-- ================= BÀI VIẾT MỚI NHẤT ================= -->
+  <section class="section" id="bai-viet">
+    <div class="section-head">
+      <h2>BÀI VIẾT MỚI NHẤT</h2>
+      <span class="line"></span>
+    </div>
+
+    <p class="search-info" id="searchInfo" hidden></p>
+
+    <div class="post-grid" id="postGrid">
+      <article class="post-card" data-cat="dong-chay">
+        <a href="#" class="thumb thumb-1"><img src="images/nhacvang1.jpg" alt="Nhạc vàng và dấu ấn trong đời sống âm nhạc Việt Nam" loading="lazy"><span class="tag tag-red">DÒNG CHẢY</span></a>
+        <div class="post-body">
+          <h3><a href="#">Nhạc vàng và dấu ấn trong đời sống âm nhạc Việt Nam</a></h3>
+          <p>Không chỉ là một dòng nhạc, nhạc vàng còn là ký ức, là một phần không thể thiếu...</p>
+          <time class="date" datetime="2025-10-12">12.10.2026</time>
+        </div>
+      </article>
+
+      <article class="post-card" data-cat="guong-mat">
+        <a href="trinhcongson.html" class="thumb thumb-2"><img src="images/trinhcongson1.jpg" alt="Trịnh Công Sơn" loading="lazy"><span class="tag tag-gold">GƯƠNG MẶT</span></a>
+        <div class="post-body">
+          <h3><a href="trinhcongson.html">Trịnh Công Sơn và dấu ấn riêng trong nền tân nhạc Việt Nam</a></h3>
+          <p>Những giai điệu của ông vẫn sống mãi trong lòng nhiều thế hệ người Việt...</p>
+          <time class="date" datetime="2025-10-10">10.10.2026</time>
+        </div>
+      </article>
+
+      <article class="post-card" data-cat="tac-pham">
+        <a href="cakhuc.html" class="thumb thumb-3"><img src="images/cakhuc1.jpg" alt="Những ca khúc Việt Nam trở thành ký ức" loading="lazy"><span class="tag tag-red">TÁC PHẨM</span></a>
+        <div class="post-body">
+          <h3><a href="cakhuc.html">Những ca khúc Việt Nam trở thành ký ức của nhiều thế hệ</a></h3>
+          <p>Có những bài hát không chỉ để nghe, mà còn để nhớ, để sống lại những khoảnh khắc...</p>
+          <time class="date" datetime="2025-10-08">08.10.2026</time>
+        </div>
+      </article>
+
+      <article class="post-card" data-cat="van-hoa">
+        <a href="concert.html" class="thumb thumb-4"><img src="images/concert1.jpg" alt="Văn hóa đi concert của giới trẻ" loading="lazy"><span class="tag tag-green">VĂN HÓA</span></a>
+        <div class="post-body">
+          <h3><a href="concert.html">Văn hóa đi concert của giới trẻ Việt Nam đang thay đổi ra sao?</a></h3>
+          <p>Từ những sân khấu nhỏ đến những đại nhạc hội quy mô, concert đang dần...</p>
+          <time class="date" datetime="2025-10-05">05.10.2026</time>
+        </div>
+      </article>
+
+      <article class="post-card" data-cat="dong-chay">
+        <a href="#" class="thumb thumb-5"><img src="images/rapviet1.jpg" alt="Rap Việt" loading="lazy"><span class="tag tag-yellow">DÒNG CHẢY</span></a>
+        <div class="post-body">
+          <h3><a href="#">Rap Việt: Từ văn hóa đường phố đến dòng nhạc đại chúng</a></h3>
+          <p>Từ những con phố, ngõ hẻm đến sân khấu lớn, rap Việt đã có một hành trình...</p>
+          <time class="date" datetime="2025-10-02">02.10.2026</time>
+        </div>
+      </article>
+
+      <article class="post-card more is-hidden" data-cat="dong-chay">
+        <a href="baiviet.html" class="thumb thumb-1"><img src="images/danca1.jpg" alt="Từ dân ca đến V-pop: Hành trình của âm nhạc Việt Nam" loading="lazy"><span class="tag tag-red">DÒNG CHẢY</span></a>
+        <div class="post-body">
+          <h3><a href="baiviet.html">Từ dân ca đến V-pop: Hành trình của âm nhạc Việt Nam</a></h3>
+          <p>Từ những làn điệu dân ca mộc mạc đến sự bùng nổ của V-pop hiện đại...</p>
+          <time class="date" datetime="2026-10-12">12.10.2026</time>
+        </div>
+      </article>
+
+      <article class="post-card more is-hidden" data-cat="dong-chay">
+        <a href="#" class="thumb thumb-2"><img src="images/indie1.jpg" alt="Indie Việt: Khi nghệ sĩ trẻ tìm kiếm một màu sắc riêng" loading="lazy"><span class="tag tag-red">DÒNG CHẢY</span></a>
+        <div class="post-body">
+          <h3><a href="#">Indie Việt: Khi nghệ sĩ trẻ tìm kiếm một màu sắc riêng</a></h3>
+          <p>Những nghệ sĩ trẻ đang đi tìm tiếng nói riêng bên ngoài dòng chảy đại chúng...</p>
+          <time class="date" datetime="2026-09-08">08.09.2026</time>
+        </div>
+      </article>
+
+      <article class="post-card more is-hidden" data-cat="guong-mat">
+        <a href="#" class="thumb thumb-3"><img src="images/vancao1.jpg" alt="Văn Cao – người nghệ sĩ đa tài của âm nhạc Việt Nam" loading="lazy"><span class="tag tag-gold">GƯƠNG MẶT</span></a>
+        <div class="post-body">
+          <h3><a href="#">Văn Cao – người nghệ sĩ đa tài của âm nhạc Việt Nam</a></h3>
+          <p>Nhạc sĩ, họa sĩ, nhà thơ – một tài năng để lại dấu ấn sâu đậm trong văn hóa Việt...</p>
+          <time class="date" datetime="2026-09-20">20.09.2026</time>
+        </div>
+      </article>
+
+      <article class="post-card more is-hidden" data-cat="guong-mat">
+        <a href="#" class="thumb thumb-4"><img src="images/sontung1.jpg" alt="Sơn Tùng M-TP và những thay đổi trong diện mạo V-pop" loading="lazy"><span class="tag tag-gold">GƯƠNG MẶT</span></a>
+        <div class="post-body">
+          <h3><a href="#">Sơn Tùng M-TP và những thay đổi trong diện mạo V-pop</a></h3>
+          <p>Một nghệ sĩ và những chuyển động của thị trường âm nhạc đại chúng...</p>
+          <time class="date" datetime="2026-09-15">15.09.2026</time>
+        </div>
+      </article>
+
+      <article class="post-card more is-hidden" data-cat="guong-mat">
+        <a href="#" class="thumb thumb-5"><img src="images/denvau1.jpg" alt="Đen Vâu và cách kể chuyện bằng âm nhạc" loading="lazy"><span class="tag tag-gold">GƯƠNG MẶT</span></a>
+        <div class="post-body">
+          <h3><a href="#">Đen Vâu và cách kể chuyện bằng âm nhạc</a></h3>
+          <p>Những câu chuyện đời thường được kể bằng ngôn ngữ gần gũi của rap...</p>
+          <time class="date" datetime="2026-09-10">10.09.2026</time>
+        </div>
+      </article>
+
+      <article class="post-card more is-hidden" data-cat="tac-pham">
+        <a href="#" class="thumb thumb-1"><img src="images/sucsong1.jpg" alt="Điều gì tạo nên sức sống lâu dài của một ca khúc?" loading="lazy"><span class="tag tag-red">TÁC PHẨM</span></a>
+        <div class="post-body">
+          <h3><a href="#">Điều gì tạo nên sức sống lâu dài của một ca khúc?</a></h3>
+          <p>Vì sao có những bài hát vẫn được nghe lại sau hàng chục năm...</p>
+          <time class="date" datetime="2026-09-05">05.09.2026</time>
+        </div>
+      </article>
+
+      <article class="post-card more is-hidden" data-cat="tac-pham">
+        <a href="#" class="thumb thumb-2"><img src="images/album1.jpg" alt="Album nhạc Việt: Từ tuyển tập ca khúc đến một câu chuyện hoàn chỉnh" loading="lazy"><span class="tag tag-red">TÁC PHẨM</span></a>
+        <div class="post-body">
+          <h3><a href="#">Album nhạc Việt: Từ tuyển tập ca khúc đến một câu chuyện hoàn chỉnh</a></h3>
+          <p>Album dần trở thành một tác phẩm có cấu trúc và thông điệp riêng...</p>
+          <time class="date" datetime="2026-09-01">01.09.2026</time>
+        </div>
+      </article>
+
+      <article class="post-card more is-hidden" data-cat="tac-pham">
+        <a href="#" class="thumb thumb-3"><img src="images/dangian1.jpg" alt="Khi chất liệu dân gian bước vào những ca khúc hiện đại" loading="lazy"><span class="tag tag-red">TÁC PHẨM</span></a>
+        <div class="post-body">
+          <h3><a href="#">Khi chất liệu dân gian bước vào những ca khúc hiện đại</a></h3>
+          <p>Làn điệu truyền thống được làm mới trong những sản phẩm đương đại...</p>
+          <time class="date" datetime="2026-08-28">28.08.2026</time>
+        </div>
+      </article>
+
+      <article class="post-card more is-hidden" data-cat="van-hoa">
+        <a href="#" class="thumb thumb-4"><img src="images/cassette1.jpg" alt="Từ băng cassette đến streaming: Người Việt đã nghe nhạc như thế nào?" loading="lazy"><span class="tag tag-green">VĂN HÓA</span></a>
+        <div class="post-body">
+          <h3><a href="#">Từ băng cassette đến streaming: Người Việt đã nghe nhạc như thế nào?</a></h3>
+          <p>Hành trình thay đổi cách nghe nhạc của người Việt qua các thời kỳ...</p>
+          <time class="date" datetime="2026-09-28">28.09.2026</time>
+        </div>
+      </article>
+
+      <article class="post-card more is-hidden" data-cat="van-hoa">
+        <a href="#" class="thumb thumb-5"><img src="images/fandom1.jpg" alt="Fandom Việt: Khi tình yêu âm nhạc trở thành một cộng đồng" loading="lazy"><span class="tag tag-green">VĂN HÓA</span></a>
+        <div class="post-body">
+          <h3><a href="#">Fandom Việt: Khi tình yêu âm nhạc trở thành một cộng đồng</a></h3>
+          <p>Người hâm mộ không chỉ nghe nhạc mà còn cùng nhau tạo nên một cộng đồng...</p>
+          <time class="date" datetime="2026-08-22">22.08.2026</time>
+        </div>
+      </article>
+
+      <article class="post-card more is-hidden" data-cat="van-hoa">
+        <a href="#" class="thumb thumb-1"><img src="images/giaidieu1.jpg" alt="Vì sao một giai điệu có thể đánh thức ký ức?" loading="lazy"><span class="tag tag-green">VĂN HÓA</span></a>
+        <div class="post-body">
+          <h3><a href="#">Vì sao một giai điệu có thể đánh thức ký ức?</a></h3>
+          <p>Mối liên hệ giữa âm thanh, cảm xúc và ký ức trong trải nghiệm nghe nhạc...</p>
+          <time class="date" datetime="2026-08-18">18.08.2026</time>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= CHUYÊN MỤC ================= -->
+  <section class="section" id="chuyen-muc">
+    <div class="section-head">
+      <h2>KHÁM PHÁ CÁC CHUYÊN MỤC</h2>
+      <span class="line"></span>
+    </div>
+
+    <div class="cat-grid">
+      <a href="#" class="cat-card cat-1" data-cat="dong-chay">
+        <h3>DÒNG CHẢY</h3>
+        <p>Hành trình hình thành, phát triển và biến đổi của âm nhạc Việt Nam.</p>
+        <span class="cat-link">Xem thêm <span>→</span></span>
+      </a>
+      <a href="#" class="cat-card cat-2" data-cat="guong-mat">
+        <h3>GƯƠNG MẶT</h3>
+        <p>Những nhạc sĩ, ca sĩ, nghệ sĩ và cá nhân có dấu ấn trong nền âm nhạc Việt Nam.</p>
+        <span class="cat-link">Xem thêm <span>→</span></span>
+      </a>
+      <a href="#" class="cat-card cat-3" data-cat="tac-pham">
+        <h3>TÁC PHẨM</h3>
+        <p>Khám phá những ca khúc, album và sản phẩm âm nhạc tiêu biểu.</p>
+        <span class="cat-link">Xem thêm <span>→</span></span>
+      </a>
+      <a href="#" class="cat-card cat-4" data-cat="van-hoa">
+        <h3>VĂN HÓA</h3>
+        <p>Mối liên hệ giữa âm nhạc với con người, đời sống và xã hội.</p>
+        <span class="cat-link">Xem thêm <span>→</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= ĐỌC NHIỀU + ĐĂNG KÝ ================= -->
+  <section class="bottom-grid" id="doc-nhieu">
+    <div class="popular">
+      <div class="popular-head">
+        <span class="popular-title">
+          <svg viewBox="0 0 24 24"><path d="M12 2c1 4-2 5-2 8 0 1.500 1 2.500 2 2.500s2-1 2-2.500c0-1-.5-1.500-.5-2.500C15.500 7.500 18 10 18 14a6 6 0 0 1-12 0c0-3 1.500-5 3-7 1-1.300 2.500-2.500 3-5z"/></svg>
+          ĐỌC NHIỀU
+        </span>
+        <div class="popular-nav">
+          <button class="pop-prev" aria-label="Bài trước">&#10094;</button>
+          <button class="pop-next" aria-label="Bài sau">&#10095;</button>
+        </div>
+      </div>
+
+      <div class="popular-body" id="popularBody">
+        <a href="#" class="popular-thumb"><img src="images/cassette1.jpg" alt="Băng cassette" loading="lazy"></a>
+        <div class="popular-text">
+          <span class="tag tag-red" id="popTag">DÒNG CHẢY</span>
+          <h3><a href="#" id="popTitle">Từ băng cassette đến streaming: Người Việt đã nghe nhạc như thế nào?</a></h3>
+          <p id="popDesc">Hành trình thay đổi cách nghe nhạc của người Việt qua các thời kỳ, từ những chiếc băng cassette, đĩa CD cho đến thời đại streaming ngày nay...</p>
+          <div class="meta">
+            <span class="date" id="popDate">28.09.2026</span>
+            <span class="views" id="popViews"><svg viewBox="0 0 24 24"><path d="M12 5C6 5 2 12 2 12s4 7 10 7 10-7 10-7-4-7-10-7zm0 11a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></svg><span id="popViewNum">12.4K</span> lượt xem</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="newsletter">
+      <h3>ĐỒNG HÀNH CÙNG GIAI ĐIỆU VIỆT</h3>
+      <p>Đăng ký để nhận những bài viết mới nhất về âm nhạc và văn hóa âm nhạc Việt Nam.</p>
+      <form id="newsletterForm" novalidate>
+        <input type="email" id="emailInput" placeholder="Nhập email của bạn..." aria-label="Email">
+        <button type="submit" class="btn-primary">Đăng ký <span>→</span></button>
+        <small class="form-msg" id="formMsg" aria-live="polite"></small>
+      </form>
+      <svg class="lotus" viewBox="0 0 100 80" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.200"><path d="M50 70 C40 55 40 35 50 15 C60 35 60 55 50 70z"/><path d="M50 70 C32 62 22 45 25 28 C40 35 48 52 50 70z"/><path d="M50 70 C68 62 78 45 75 28 C60 35 52 52 50 70z"/><path d="M50 70 C25 70 10 58 8 45 C25 45 42 55 50 70z"/><path d="M50 70 C75 70 90 58 92 45 C75 45 58 55 50 70z"/></g></svg>
+    </aside>
+  </section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="#" class="logo logo-light">
+      <svg class="logo-icon" viewBox="0 0 64 64" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M44 6 L28 30"/><path d="M40 4 L48 10"/></g>
+        <ellipse cx="22" cy="42" rx="14" ry="16" transform="rotate(35 22 42)" fill="currentColor"/>
+        <circle cx="21" cy="42" r="3.500" fill="#7a2420"/>
+        <path d="M6 54 C20 62 40 58 60 44" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text"><span class="logo-top">GIAI ĐIỆU</span><span class="logo-bottom">VIỆT</span></span>
+    </a>
+    <p class="slogan">“Nghe một giai điệu, hiểu một câu chuyện”</p>
+    <ul class="footer-links">
+      <li><a href="#">Giới thiệu</a></li>
+      <li><a href="#">Liên hệ</a></li>
+      <li><a href="#">Chính sách bảo mật</a></li>
+    </ul>
+    <div class="socials socials-light">
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.500 21v-7.500h2.600l.4-3h-3V8.600c0-.9.3-1.500 1.500-1.500h1.600V4.400c-.3 0-1.200-.1-2.300-.1-2.300 0-3.800 1.400-3.800 3.900v2.300H8v3h2.500V21z"/></svg></a>
+      <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M21.600 7.200a2.500 2.500 0 0 0-1.800-1.800C18.200 5 12 5 12 5s-6.200 0-7.800.4A2.500 2.500 0 0 0 2.400 7.200C2 8.800 2 12 2 12s0 3.200.4 4.800a2.500 2.500 0 0 0 1.800 1.800C5.800 19 12 19 12 19s6.200 0 7.800-.4a2.500 2.500 0 0 0 1.800-1.800C22 15.200 22 12 22 12s0-3.200-.4-4.800zM10 15V9l5.200 3z"/></svg></a>
+      <a href="#" aria-label="Spotify"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.600 14.400a.6.6 0 0 1-.8.2c-2.200-1.300-4.900-1.600-8.100-.9a.6.6 0 1 1-.3-1.200c3.500-.8 6.500-.5 9 1a.6.6 0 0 1 .2.900zm1.200-2.700a.8.8 0 0 1-1 .3c-2.500-1.500-6.300-2-9.200-1.100a.8.8 0 0 1-.5-1.500c3.400-1 7.600-.5 10.500 1.300.4.200.5.700.2 1zm.1-2.800C14.900 9.100 10 8.900 7.200 9.800a1 1 0 1 1-.6-1.900c3.200-1 8.600-.8 12 1.200a1 1 0 0 1-1 1.800z"/></svg></a>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Giai Điệu Việt</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/effects.js"></script>
+</body>
+</html>

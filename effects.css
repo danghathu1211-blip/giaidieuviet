@@ -1,0 +1,61 @@
+/* ============================================================
+   effects.css – HIỆU ỨNG CHUYỂN TIẾP (dùng chung mọi trang)
+   Nạp SAU style.css (và baiviet.css nếu có).
+   Muốn tắt: xóa thẻ <link> của file này. Muốn chậm/nhanh: đổi --t
+   ============================================================ */
+:root { --t: .45s; --ease: cubic-bezier(.22, .61, .36, 1); }
+html { scroll-behavior: smooth; }
+
+/* 1. Vào trang: mờ dần hiện ra */
+body { animation: gdvPageIn .5s var(--ease) backwards; }
+@keyframes gdvPageIn { from { opacity: 0; } }
+.article-layout, main { animation: gdvRise .6s var(--ease) backwards; }
+@keyframes gdvRise { from { opacity: 0; transform: translateY(14px); } }
+
+/* 2. Rời trang: mờ đi trước khi chuyển (class do effects.js thêm) */
+body.gdv-leave { opacity: 0; transition: opacity .28s ease; pointer-events: none; }
+
+/* 3. Cuộn tới đâu hiện tới đó (class do effects.js thêm) */
+.gdv-reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s var(--ease), transform .7s var(--ease); transition-delay: var(--d, 0s); }
+.gdv-reveal.gdv-in { opacity: 1; transform: none; }
+
+/* 4. Thẻ bài viết: hiện lần lượt mỗi khi lọc chuyên mục / tìm kiếm / tải trang */
+.post-card { animation: gdvCard .55s var(--ease) backwards; }
+.post-card:nth-child(2) { animation-delay: .06s; }
+.post-card:nth-child(3) { animation-delay: .12s; }
+.post-card:nth-child(4) { animation-delay: .18s; }
+.post-card:nth-child(5) { animation-delay: .24s; }
+@keyframes gdvCard { from { opacity: 0; transform: translateY(22px) scale(.97); } }
+.search-info:not([hidden]) { animation: gdvDrop .4s var(--ease) backwards; }
+@keyframes gdvDrop { from { opacity: 0; transform: translateY(-8px); } }
+
+/* 5. Slide đầu trang: chữ trượt lên lần lượt khi đổi slide */
+.hero-slide.active .hero-content > * { animation: gdvRise .7s var(--ease) backwards; }
+.hero-slide.active .hero-content > :nth-child(2) { animation-delay: .1s; }
+.hero-slide.active .hero-content > :nth-child(3) { animation-delay: .2s; }
+.hero-slide.active .hero-content > :nth-child(4) { animation-delay: .3s; }
+.hero-slide.active .hero-visual { animation: gdvZoom 1.4s var(--ease) backwards; }
+@keyframes gdvZoom { from { opacity: 0; transform: scale(1.06); } }
+
+/* 6. Sidebar bài viết: từng mục hiện lần lượt */
+.related li, .top-list li, .keywords a { animation: gdvRise .6s var(--ease) backwards; }
+.related li:nth-child(2), .top-list li:nth-child(2) { animation-delay: .08s; }
+.related li:nth-child(3), .top-list li:nth-child(3) { animation-delay: .16s; }
+.related li:nth-child(4), .top-list li:nth-child(4) { animation-delay: .24s; }
+.top-list li:nth-child(5) { animation-delay: .32s; }
+
+/* 7. Phản hồi khi bấm / rê chuột */
+a, button, .cat-card, .post-card, .share-btn, .keywords a { transition-property: transform, opacity, background-color, color, box-shadow, border-color, gap; transition-duration: .25s; transition-timing-function: var(--ease); }
+button:active, .btn-primary:active, .share-btn:active, .hero-arrow:active, .to-top:active { scale: .92; }
+.cat-card:active, .post-card:active { scale: .98; }.cat-card:hover { transform: translateY(-5px); }
+.read-more:active, .see-all:active { opacity: .7; }
+
+/* Sóng lan tỏa khi bấm nút (do effects.js thêm) */
+.gdv-ripple { position: absolute; border-radius: 50%; background: rgba(255,255,255,.45); transform: scale(0); animation: gdvRipple .6s ease-out forwards; pointer-events: none; }
+@keyframes gdvRipple { to { transform: scale(2.6); opacity: 0; } }
+
+/* Ai bật "giảm chuyển động" trong hệ điều hành thì tắt hết */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition-duration: .01s !important; scroll-behavior: auto !important; }
+  .gdv-reveal { opacity: 1; transform: none; }
+}

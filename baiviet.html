@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Từ dân ca đến V-pop: Hành trình của âm nhạc Việt Nam – Giai Điệu Việt</title>
+<meta name="description" content="Từ những câu hát dân gian đến các ca khúc V-pop trên nền tảng số, âm nhạc Việt Nam đã trải qua một hành trình dài với nhiều thay đổi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&family=Noto+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/baiviet.css">
+<link rel="stylesheet" href="css/effects.css">
+</head>
+
+<!-- [ĐỔI 1] data-id = mã bài trong js/data.js.
+     data-related (tuỳ chọn) = tự chọn bài liên quan; bỏ đi thì tự lấy bài cùng chuyên mục -->
+<body data-id="dan-ca-vpop" data-related="nhac-vang,rap-viet,indie-viet,trinh-cong-son">
+
+<div class="read-progress" id="readProgress"></div>
+
+<!-- ================= THANH CÔNG CỤ TRÊN (HEADER) – giữ nguyên ở mọi bài ================= -->
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a href="giaodienchinh.html" class="logo" aria-label="Giai Điệu Việt – về trang chủ">
+      <svg class="logo-icon" viewBox="0 0 64 64" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M44 6 L28 30"/><path d="M40 4 L48 10"/></g>
+        <ellipse cx="22" cy="42" rx="14" ry="16" transform="rotate(35 22 42)" fill="currentColor"/>
+        <circle cx="21" cy="42" r="3.5" fill="#f8f1ea"/>
+        <path d="M6 54 C20 62 40 58 60 44" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text"><span class="logo-top">GIAI ĐIỆU</span><span class="logo-bottom">VIỆT</span></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="giaodienchinh.html">Trang chủ</a></li>
+        <li><a href="giaodienchinh.html?cat=dong-chay" data-cat="dong-chay">Dòng chảy</a></li>
+        <li><a href="giaodienchinh.html?cat=guong-mat" data-cat="guong-mat">Gương mặt</a></li>
+        <li><a href="giaodienchinh.html?cat=tac-pham" data-cat="tac-pham">Tác phẩm</a></li>
+        <li><a href="giaodienchinh.html?cat=van-hoa" data-cat="van-hoa">Văn hóa</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-tools">
+      <form class="search-box" action="giaodienchinh.html" method="get" role="search">
+        <input type="text" name="q" placeholder="Tìm kiếm..." aria-label="Tìm kiếm">
+        <button type="submit" aria-label="Tìm"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+      </form>
+      <div class="socials">
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"/></svg></a>
+        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8C22 15.2 22 12 22 12s0-3.2-.4-4.8zM10 15V9l5.2 3z"/></svg></a>
+        <a href="https://spotify.com" target="_blank" rel="noopener" aria-label="Spotify"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.8.2c-2.2-1.3-4.9-1.6-8.1-.9a.6.6 0 1 1-.3-1.2c3.5-.8 6.5-.5 9 1a.6.6 0 0 1 .2.9zm1.2-2.7a.8.8 0 0 1-1 .3c-2.5-1.5-6.3-2-9.2-1.1a.8.8 0 0 1-.5-1.5c3.4-1 7.6-.5 10.5 1.3.4.2.5.7.2 1zm.1-2.8C14.900 9.100 10 8.900 7.200 9.800a1 1 0 1 1-.6-1.900c3.200-1 8.600-.8 12 1.200a1 1 0 0 1-1 1.800z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= NỘI DUNG BÀI VIẾT ================= -->
+<div class="container article-layout">
+
+  <article class="article">
+    <a href="giaodienchinh.html" class="back-link"><span>←</span> Quay lại</a>
+
+    <!-- [ĐỔI 2] chuyên mục: nhãn + link + màu (tag-red / tag-gold / tag-green) -->
+    <a href="giaodienchinh.html?cat=dong-chay" class="tag tag-red">DÒNG CHẢY</a>
+
+    <!-- [ĐỔI 3] tiêu đề + đoạn mở đầu -->
+    <h1 class="article-title">Từ dân ca đến V-pop:<br>Hành trình của âm nhạc Việt Nam</h1>
+    <p class="article-lede">Từ những câu hát dân gian được truyền qua nhiều thế hệ đến những ca khúc V-pop xuất hiện trên các nền tảng số, âm nhạc Việt Nam đã trải qua một hành trình dài với nhiều thay đổi. Mỗi giai đoạn đều để lại những dấu ấn riêng, đồng thời góp phần tạo nên diện mạo đa dạng của âm nhạc Việt Nam hôm nay.</p>
+
+    <!-- [ĐỔI 4] tác giả + ngày đăng -->
+    <div class="article-meta">
+      <div class="author">
+        <span class="avatar" aria-hidden="true">TH</span>
+        <div><strong>Đặng Hà Thu</strong><small>Biên tập viên</small></div>
+      </div>
+      <time class="meta-item" datetime="2026-10-12"><i class="ico ico-cal"></i>12.10.2026</time>
+      <span class="meta-item"><i class="ico ico-clock"></i><span id="readTime">8 phút đọc</span></span>
+      <div class="share">
+        <span>Chia sẻ:</span>
+        <button type="button" class="share-btn" id="shareFb" aria-label="Chia sẻ lên Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"/></svg></button>
+        <button type="button" class="share-btn plain" id="copyLink" aria-label="Sao chép liên kết"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.700 0l3-3a4 4 0 0 0-5.700-5.700l-1 1"/><path d="M14 10a4 4 0 0 0-5.700 0l-3 3a4 4 0 0 0 5.700 5.700l1-1"/></svg></button>
+        <button type="button" class="share-btn plain" id="bookmark" aria-label="Lưu bài viết" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+      </div>
+    </div>
+
+    <!-- [ĐỔI 5] ảnh chính + chú thích -->
+    <figure class="article-hero">
+      <div class="hero-img"><img src="images/danca1.jpg" alt="Hành trình của âm nhạc Việt Nam từ dân ca đến V-pop"></div>
+      <figcaption>Âm nhạc Việt Nam là sự giao thoa giữa truyền thống và hiện đại, giữa những giá trị xưa cũ và hơi thở đương đại.</figcaption>
+    </figure>
+
+    <!-- [ĐỔI 6] nội dung bài: mỗi mục là 1 thẻ <h2> + các đoạn <p> -->
+    <div class="article-body" id="articleBody">
+      <h2>Từ những giai điệu trong đời sống cộng đồng</h2>
+      <p>Trước khi âm nhạc trở thành một sản phẩm được ghi âm, phát hành và phổ biến trên các nền tảng số, âm nhạc đã hiện diện trong đời sống của người Việt từ rất lâu. Những câu hát dân gian gắn với lao động, sinh hoạt cộng đồng, nghi lễ và những dịp đặc biệt trong đời sống.</p>
+      <p>Dân ca không chỉ có chức năng giải trí. Qua lời ca và cách thể hiện, những hình thức âm nhạc truyền thống lưu giữ cách con người nhìn nhận tình yêu, gia đình, quê hương và cộng đồng. Quan họ, ca trù, ví giặm, đờn ca tài tử hay nhiều hình thức diễn xướng dân gian khác cho thấy sự phong phú của đời sống âm nhạc Việt Nam.</p>
+      <p>Điểm đáng chú ý là những hình thức âm nhạc này thường không tồn tại tách biệt khỏi đời sống. Âm nhạc đi cùng lời ăn tiếng nói, phong tục, không gian sinh hoạt và ký ức cộng đồng. Chính điều đó tạo nên mối liên hệ chặt chẽ giữa âm nhạc và văn hóa.</p>
+
+      <h2>Tân nhạc và bước chuyển của âm nhạc Việt Nam</h2>
+      <p>Bước sang thế kỷ XX, đời sống âm nhạc Việt Nam có những thay đổi đáng kể. Sự xuất hiện và phát triển của tân nhạc tạo nên một không gian sáng tác mới, với cách xây dựng giai điệu, ca từ và hình thức thể hiện khác với nhiều loại hình âm nhạc truyền thống.</p>
+      <p>Các nhạc sĩ bắt đầu sử dụng âm nhạc để diễn đạt những cảm xúc cá nhân rõ nét hơn. Tình yêu, nỗi nhớ, thân phận, quê hương và những suy tư về cuộc sống trở thành những chủ đề quen thuộc trong sáng tác.</p>
+                      <figure class="article-hero">
+      <div class="hero-img"><img src="images/danca2.jpg" alt="Hành trình của âm nhạc Việt Nam"></div>
+      <figcaption>Radio lưu giữ những giá trị âm nhạc truyền thống của người Việt.</figcaption>
+    </figure>
+      <p>Sự phát triển của radio, đĩa nhạc và các phương tiện truyền thông cũng giúp ca khúc vượt ra khỏi không gian biểu diễn trực tiếp. Một bài hát có thể được nghe bởi nhiều người ở những địa điểm khác nhau, từ đó mở rộng đáng kể khả năng lan tỏa của âm nhạc.</p>
+
+      <h2>Từ nhạc trẻ đến Vpop</h2>
+      <p>Sau nhiều giai đoạn phát triển, âm nhạc đại chúng Việt Nam ngày càng chịu ảnh hưởng của các xu hướng quốc tế. Nhạc trẻ xuất hiện với nhiều phong cách khác nhau, từ pop, rock, dance đến hip-hop và R&amp;B.</p>
+      <p>Khi Internet và các nền tảng số phát triển, cách sản xuất và đưa âm nhạc đến công chúng tiếp tục thay đổi. Nghệ sĩ có thể phát hành sản phẩm trên YouTube, các nền tảng nghe nhạc trực tuyến hoặc mạng xã hội mà không còn hoàn toàn phụ thuộc vào những phương thức phát hành truyền thống.</p>
+                            <figure class="article-hero">
+      <div class="hero-img"><img src="images/danca3.jpg" alt="Hành trình của âm nhạc Việt Nam"></div>
+      <figcaption>V-pop phản ánh sự đổi mới của âm nhạc Việt Nam đương đại.</figcaption>
+    </figure>
+      <p>Khái niệm Vpop cũng dần được sử dụng để nói đến diện mạo âm nhạc đại chúng Việt Nam trong môi trường hiện đại. Những sản phẩm âm nhạc ngày càng chú trọng đồng thời vào ca khúc, hình ảnh, video, sân khấu và chiến lược truyền thông.</p>
+
+      <h2>Một dòng chảy không ngừng biến đổi</h2>
+      <p>Một trong những xu hướng đáng chú ý của âm nhạc Việt Nam hiện nay là việc đưa chất liệu truyền thống vào những sản phẩm hiện đại. Giai điệu, nhạc cụ, hình ảnh, trang phục hoặc câu chuyện văn hóa có thể được kết hợp với pop, rap, electronic hay các hình thức sản xuất âm nhạc mới.</p>
+      <p>Nhìn lại hành trình của âm nhạc Việt Nam, có thể thấy mỗi giai đoạn đều chịu tác động của xã hội, công nghệ và thị hiếu công chúng. Từ câu hát dân gian đến bản nhạc phát trên nền tảng streaming, phương thức thưởng thức đã thay đổi rất nhiều nhưng nhu cầu kể chuyện và kết nối cảm xúc của âm nhạc vẫn còn nguyên.</p>
+      <p>Âm nhạc Việt Nam vì thế không phải một dòng chảy đứng yên. Đó là quá trình liên tục tiếp nhận, biến đổi và sáng tạo, trong đó những giá trị cũ có thể tìm thấy đời sống mới trong những hình thức hiện đại.</p>
+    </div>
+  </article>
+
+  <!-- ================= THANH CÔNG CỤ BÊN (SIDEBAR) ================= -->
+  <aside class="sidebar">
+
+    <!-- Bài viết liên quan: để TRỐNG, baiviet.js tự điền từ data.js -->
+    <section class="side-box">
+      <div class="side-head"><h3>Bài viết liên quan</h3><span class="line"></span><a href="giaodienchinh.html" id="relatedMore" aria-label="Xem thêm">→</a></div>
+      <ul class="related" id="relatedList"></ul>
+    </section>
+
+    <!-- [ĐỔI 7] từ khóa (bấm sẽ sang trang chủ và lọc bài) -->
+    <section class="side-box small">
+      <div class="side-head"><h3>Từ khóa</h3><span class="line"></span></div>
+      <div class="keywords">
+        <a href="giaodienchinh.html?cat=dong-chay">dân ca Việt Nam</a>
+        <a href="giaodienchinh.html?q=tân nhạc">tân nhạc</a>
+        <a href="giaodienchinh.html?cat=dong-chay">V-pop</a>
+        <a href="giaodienchinh.html?q=trẻ">nhạc trẻ</a>
+        <a href="giaodienchinh.html?q=âm nhạc">âm nhạc truyền thống</a>
+        <a href="giaodienchinh.html?cat=van-hoa">giao thoa văn hóa</a>
+      </div>
+    </section>
+
+    <section class="side-box newsletter-box">
+      <h3>Đồng hành cùng<br>Giai Điệu Việt</h3>
+      <p>Đăng ký để nhận những bài viết mới nhất về âm nhạc và văn hóa âm nhạc Việt Nam.</p>
+      <form id="newsletterForm" novalidate>
+        <input type="email" id="emailInput" placeholder="Nhập email của bạn..." aria-label="Email">
+        <button type="submit" class="btn-primary">Đăng ký <span>→</span></button>
+        <small class="form-msg" id="formMsg" aria-live="polite"></small>
+      </form>
+      <svg class="lotus" viewBox="0 0 100 80" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M50 70 C40 55 40 35 50 15 C60 35 60 55 50 70z"/><path d="M50 70 C32 62 22 45 25 28 C40 35 48 52 50 70z"/><path d="M50 70 C68 62 78 45 75 28 C60 35 52 52 50 70z"/><path d="M50 70 C25 70 10 58 8 45 C25 45 42 55 50 70z"/><path d="M50 70 C75 70 90 58 92 45 C75 45 58 55 50 70z"/></g></svg>
+    </section>
+
+    <!-- Bài viết được xem nhiều: để TRỐNG, baiviet.js tự điền từ data.js -->
+    <section class="side-box small">
+      <div class="side-head"><h3>Bài viết được xem nhiều</h3></div>
+      <ol class="top-list" id="topList"></ol>
+    </section>
+  </aside>
+</div>
+
+<!-- ================= THANH CÔNG CỤ DƯỚI (FOOTER) – giữ nguyên ở mọi bài ================= -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="giaodienchinh.html" class="logo logo-light" aria-label="Giai Điệu Việt – về trang chủ">
+      <svg class="logo-icon" viewBox="0 0 64 64" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M44 6 L28 30"/><path d="M40 4 L48 10"/></g>
+        <ellipse cx="22" cy="42" rx="14" ry="16" transform="rotate(35 22 42)" fill="currentColor"/>
+        <circle cx="21" cy="42" r="3.5" fill="#7a2420"/>
+        <path d="M6 54 C20 62 40 58 60 44" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text"><span class="logo-top">GIAI ĐIỆU</span><span class="logo-bottom">VIỆT</span></span>
+    </a>
+    <p class="slogan"> “Nghe một giai điệu, hiểu một câu chuyện”</p>
+    <ul class="footer-links">
+      <li><a href="#">Giới thiệu</a></li>
+      <li><a href="#">Liên hệ</a></li>
+      <li><a href="#">Chính sách bảo mật</a></li>
+    </ul>
+    <div class="socials socials-light">
+      <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"/></svg></a>
+      <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8C22 15.2 22 12 22 12s0-3.2-.4-4.8zM10 15V9l5.2 3z"/></svg></a>
+      <a href="https://spotify.com" target="_blank" rel="noopener" aria-label="Spotify"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.8.2c-2.2-1.3-4.9-1.6-8.1-.9a.6.6 0 1 1-.3-1.2c3.5-.8 6.5-.5 9 1a.6.6 0 0 1 .2.9zm1.2-2.7a.8.8 0 0 1-1 .3c-2.5-1.5-6.3-2-9.2-1.1a.8.8 0 0 1-.5-1.5c3.4-1 7.6-.5 10.5 1.3.4.2.5.7.2 1zm.1-2.8C14.900 9.100 10 8.900 7.200 9.800a1 1 0 1 1-.6-1.900c3.200-1 8.600-.8 12 1.200a1 1 0 0 1-1 1.800z"/></svg></a>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Giai Điệu Việt</p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- Thứ tự quan trọng: data.js TRƯỚC, baiviet.js SAU -->
+<script src="js/data.js"></script>
+<script src="js/baiviet.js"></script>
+<script src="js/effects.js"></script>
+</body>
+</html>

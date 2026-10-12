@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Những ca khúc Việt Nam trở thành ký ức của nhiều thế hệ – Giai Điệu Việt</title>
+<meta name="description" content="Có những ca khúc không chỉ được nghe ở một thời điểm mà còn đi cùng con người qua nhiều giai đoạn của cuộc sống. Một giai điệu có thể gắn với tuổi học trò, một...">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&family=Noto+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/baiviet.css">
+<link rel="stylesheet" href="css/effects.css">
+</head>
+
+<!-- [ĐỔI 1] data-id = mã bài trong js/data.js.
+     data-related (tuỳ chọn) = tự chọn bài liên quan; bỏ đi thì tự lấy bài cùng chuyên mục -->
+<body data-id="ca-khuc-ky-uc">
+
+<div class="read-progress" id="readProgress"></div>
+
+<!-- ================= THANH CÔNG CỤ TRÊN (HEADER) – giữ nguyên ở mọi bài ================= -->
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a href="giaodienchinh.html" class="logo" aria-label="Giai Điệu Việt – về trang chủ">
+      <svg class="logo-icon" viewBox="0 0 64 64" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M44 6 L28 30"/><path d="M40 4 L48 10"/></g>
+        <ellipse cx="22" cy="42" rx="14" ry="16" transform="rotate(35 22 42)" fill="currentColor"/>
+        <circle cx="21" cy="42" r="3.5" fill="#f8f1ea"/>
+        <path d="M6 54 C20 62 40 58 60 44" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text"><span class="logo-top">GIAI ĐIỆU</span><span class="logo-bottom">VIỆT</span></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="giaodienchinh.html">Trang chủ</a></li>
+        <li><a href="giaodienchinh.html?cat=dong-chay" data-cat="dong-chay">Dòng chảy</a></li>
+        <li><a href="giaodienchinh.html?cat=guong-mat" data-cat="guong-mat">Gương mặt</a></li>
+        <li><a href="giaodienchinh.html?cat=tac-pham" data-cat="tac-pham">Tác phẩm</a></li>
+        <li><a href="giaodienchinh.html?cat=van-hoa" data-cat="van-hoa">Văn hóa</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-tools">
+      <form class="search-box" action="giaodienchinh.html" method="get" role="search">
+        <input type="text" name="q" placeholder="Tìm kiếm..." aria-label="Tìm kiếm">
+        <button type="submit" aria-label="Tìm"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+      </form>
+      <div class="socials">
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"/></svg></a>
+        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8C22 15.2 22 12 22 12s0-3.2-.4-4.8zM10 15V9l5.2 3z"/></svg></a>
+        <a href="https://spotify.com" target="_blank" rel="noopener" aria-label="Spotify"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.8.2c-2.2-1.3-4.9-1.6-8.1-.9a.6.6 0 1 1-.3-1.2c3.5-.8 6.5-.5 9 1a.6.6 0 0 1 .2.9zm1.2-2.7a.8.8 0 0 1-1 .3c-2.5-1.5-6.3-2-9.2-1.1a.8.8 0 0 1-.5-1.5c3.4-1 7.6-.5 10.5 1.3.4.2.5.7.2 1zm.1-2.8C14.900 9.100 10 8.900 7.200 9.800a1 1 0 1 1-.6-1.900c3.200-1 8.600-.8 12 1.200a1 1 0 0 1-1 1.800z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= NỘI DUNG BÀI VIẾT ================= -->
+<div class="container article-layout">
+
+  <article class="article">
+    <a href="giaodienchinh.html" class="back-link"><span>←</span> Quay lại</a>
+
+    <!-- [ĐỔI 2] chuyên mục: nhãn + link + màu (tag-red / tag-gold / tag-green) -->
+    <a href="giaodienchinh.html?cat=tac-pham" class="tag tag-red">TÁC PHẨM</a>
+
+    <!-- [ĐỔI 3] tiêu đề + đoạn mở đầu -->
+    <h1 class="article-title">Những ca khúc Việt Nam trở thành<br>ký ức của nhiều thế hệ</h1>
+    <p class="article-lede">Có những ca khúc không chỉ được nghe ở một thời điểm mà còn đi cùng con người qua nhiều giai đoạn của cuộc sống. Một giai điệu có thể gắn với tuổi học trò, một mối tình, một mùa hè hay một sự kiện quan trọng. Khi được nghe lại sau nhiều năm, ca khúc không chỉ trở về bằng âm thanh mà còn kéo theo những hình ảnh và cảm xúc từng tưởng đã nằm lại trong quá khứ.</p>
+
+    <!-- [ĐỔI 4] tác giả + ngày đăng -->
+    <div class="article-meta">
+      <div class="author">
+        <span class="avatar" aria-hidden="true">TH</span>
+        <div><strong>Đặng Hà Thu</strong><small>Biên tập viên</small></div>
+      </div>
+      <time class="meta-item" datetime="2026-10-08"><i class="ico ico-cal"></i>08.10.2026</time>
+      <span class="meta-item"><i class="ico ico-clock"></i><span id="readTime">8 phút đọc</span></span>
+      <div class="share">
+        <span>Chia sẻ:</span>
+        <button type="button" class="share-btn" id="shareFb" aria-label="Chia sẻ lên Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"/></svg></button>
+        <button type="button" class="share-btn plain" id="copyLink" aria-label="Sao chép liên kết"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.700 0l3-3a4 4 0 0 0-5.700-5.700l-1 1"/><path d="M14 10a4 4 0 0 0-5.700 0l-3 3a4 4 0 0 0 5.700 5.700l1-1"/></svg></button>
+        <button type="button" class="share-btn plain" id="bookmark" aria-label="Lưu bài viết" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+      </div>
+    </div>
+
+    <!-- [ĐỔI 5] ảnh chính + chú thích -->
+    <figure class="article-hero">
+      <div class="hero-img"><img src="images/cakhuc1.jpg" alt="Những ca khúc Việt Nam trở thành ký ức của nhiều thế hệ"></div>
+      <figcaption>Một ca khúc có thể kéo người nghe trở lại với cả không khí của một khoảnh khắc đã qua.</figcaption>
+    </figure>
+
+    <!-- [ĐỔI 6] nội dung bài: mỗi mục là 1 thẻ <h2> + các đoạn <p> -->
+    <div class="article-body" id="articleBody">
+      <h2>Khi một bài hát trở thành một phần của ký ức</h2>
+      <p>Không phải ca khúc nổi tiếng nào cũng trở thành ký ức chung. Một bài hát có thể được nghe hàng triệu lần nhưng vẫn chỉ tồn tại như một sản phẩm giải trí của một thời điểm. Ngược lại, có những ca khúc được gắn với những trải nghiệm cụ thể đến mức chỉ cần vài nốt nhạc đầu tiên vang lên, người nghe đã nhớ đến một khoảng thời gian nào đó.</p>
+      <p>Điểm khác biệt nằm ở mối quan hệ giữa âm nhạc và trải nghiệm cá nhân. Một ca khúc thường xuất hiện trong những hoàn cảnh nhất định: những ngày đầu đi học, những buổi tụ tập bạn bè, một chuyến đi, một mối tình hay một giai đoạn thay đổi trong cuộc sống.</p>
+      <p>Theo nghiên cứu về ký ức tự truyện được gợi lên bởi âm nhạc, âm nhạc quen thuộc có khả năng gợi lại những ký ức cá nhân và cảm xúc mạnh. Một nghiên cứu của nhóm Petr Janata cho thấy các ca khúc có liên hệ với trải nghiệm cá nhân, quen thuộc và giàu cảm xúc thường dễ tạo ra cảm giác hoài niệm hơn.</p>
+
+      <h2>Những ca khúc đi cùng một thế hệ</h2>
+      <p>Trong đời sống âm nhạc Việt Nam, có những ca khúc được tiếp nhận rộng rãi đến mức chúng trở thành một phần của ký ức tập thể. Người nghe có thể không nhớ chính xác lần đầu tiên mình nghe bài hát ở đâu, nhưng lại nhớ rất rõ giai đoạn mà ca khúc ấy xuất hiện trong cuộc sống.</p>
+      <p>Những ca khúc về tuổi trẻ, tình yêu, quê hương hay gia đình thường có khả năng tạo ra sự kết nối này. Chúng có thể xuất hiện trong các chương trình truyền hình, radio, sân khấu, băng đĩa hoặc sau này là nền tảng số.</p>
+         <figure class="article-hero">
+      <div class="hero-img"><img src="images/cakhuc2.jpg" alt="Những ca khúc Việt Nam trở thành ký ức của nhiều thế hệ"></div>
+      <figcaption>"Nhạc nền" riêng của một thế hệ riêng.</figcaption>
+    </figure>
+      <p>Mỗi thế hệ lại có một “nhạc nền” riêng. Với thế hệ từng lớn lên cùng cassette và CD, một số ca khúc gắn với chiếc radio hoặc dàn máy trong gia đình. Với thế hệ trưởng thành cùng Internet, ký ức có thể gắn với những bản nhạc được tải về, chia sẻ trên mạng xã hội hoặc nghe lặp lại trên các nền tảng trực tuyến.</p>
+      <p>Vì vậy, ký ức âm nhạc không chỉ được tạo ra bởi bản thân ca khúc mà còn bởi phương tiện và không gian mà người nghe tiếp xúc với nó.</p>
+
+      <h2>Từ ký ức cá nhân đến ký ức cộng đồng</h2>
+      <p>Một ca khúc có thể bắt đầu từ trải nghiệm của một cá nhân nhưng dần trở thành ký ức chung của nhiều người.</p>
+      <p>Điều này thường xảy ra khi bài hát xuất hiện trong những hoàn cảnh có tính cộng đồng. Một ca khúc được nhiều người cùng hát trong trường học, chương trình truyền hình, sự kiện hoặc những dịp đặc biệt sẽ tạo ra những lớp ký ức vượt khỏi trải nghiệm cá nhân.</p>
+      <p>Khi đó, bài hát không chỉ được nhớ vì giai điệu mà còn vì những con người và không gian gắn với nó. Một ca khúc có thể nhắc người nghe về một lớp học, một nhóm bạn, một thành phố hoặc một thời kỳ mà nhiều người cùng trải qua.</p>
+      <p>Đó cũng là lý do những bài hát cũ vẫn có thể xuất hiện trở lại trong đời sống âm nhạc. Khi một thế hệ mới nghe lại và tiếp nhận chúng, ký ức của thế hệ trước có cơ hội được truyền sang một bối cảnh mới.</p>
+
+      <h2>Vì sao những bài hát cũ vẫn có sức sống?</h2>
+      <p>Sức sống lâu dài của một ca khúc không chỉ phụ thuộc vào tuổi đời. Một tác phẩm có thể tồn tại qua nhiều năm khi nội dung và cảm xúc của nó vẫn có khả năng tạo đồng cảm.</p>
+      <p>Tình yêu, tuổi trẻ, chia xa, gia đình hay mong muốn tìm kiếm một nơi thuộc về là những trải nghiệm không biến mất khi xã hội thay đổi. Vì vậy, một ca khúc được viết cách đây nhiều năm vẫn có thể nói với người nghe trẻ bằng một cảm xúc quen thuộc.</p>
+               <figure class="article-hero">
+      <div class="hero-img"><img src="images/cakhuc3.jpg" alt="Những ca khúc Việt Nam trở thành ký ức của nhiều thế hệ"></div>
+      <figcaption>Có những giai điệu gắn liền với ký ức của nhiều thế hệ.</figcaption>
+    </figure>
+      <p>Bên cạnh đó, việc các nghệ sĩ mới hát lại hoặc phối khí lại những ca khúc cũ cũng giúp chúng tiếp cận công chúng mới. Tác phẩm được đặt trong một không gian âm thanh khác nhưng vẫn giữ lại phần cốt lõi khiến người nghe nhận ra nó.</p>
+      <p>Quá trình này tạo nên một vòng đời mới cho ca khúc: từ tác phẩm của một thời đại trở thành chất liệu để thế hệ sau tiếp tục diễn giải.</p>
+
+      <h2>Khi âm nhạc lưu giữ thời gian</h2>
+      <p>Điều đặc biệt của âm nhạc là khả năng gắn một trải nghiệm vô hình với một âm thanh cụ thể. Một bức ảnh có thể lưu giữ hình ảnh của một khoảnh khắc, trong khi một ca khúc có thể kéo người nghe trở lại với cả không khí của khoảnh khắc ấy.</p>
+      <p>Nghiên cứu gần đây về hoài niệm do âm nhạc gợi lên tiếp tục cho thấy những ca khúc mang ý nghĩa cá nhân có thể liên quan đến cảm giác hoài niệm và độ sống động của ký ức.</p>
+      <p>Bởi vậy, khi một người nói “bài hát này đưa tôi trở về thời đó”, họ không chỉ đang nói về sở thích âm nhạc. Họ đang nói về mối liên hệ giữa âm thanh, ký ức và câu chuyện của chính mình.</p>
+
+      <h2>Một bài hát, nhiều câu chuyện</h2>
+      <p>Những ca khúc trở thành ký ức của nhiều thế hệ không nhất thiết phải là những tác phẩm có cấu trúc phức tạp hay kỹ thuật đặc biệt. Điều quan trọng hơn là khả năng để người nghe tìm thấy một phần cuộc sống của mình trong đó.</p>
+      <p>Một bài hát có thể thuộc về người sáng tác khi nó được viết ra, nhưng sau khi đến với công chúng, mỗi người lại trao cho nó một câu chuyện riêng. Chính những câu chuyện ấy giúp ca khúc tiếp tục tồn tại lâu hơn tuổi đời của nó.</p>
+    </div>
+  </article>
+
+  <!-- ================= THANH CÔNG CỤ BÊN (SIDEBAR) ================= -->
+  <aside class="sidebar">
+
+    <!-- Bài viết liên quan: để TRỐNG, baiviet.js tự điền từ data.js -->
+    <section class="side-box">
+      <div class="side-head"><h3>Bài viết liên quan</h3><span class="line"></span><a href="giaodienchinh.html" id="relatedMore" aria-label="Xem thêm">→</a></div>
+      <ul class="related" id="relatedList"></ul>
+    </section>
+
+    <!-- [ĐỔI 7] từ khóa (bấm sẽ sang trang chủ và lọc bài) -->
+    <section class="side-box small">
+      <div class="side-head"><h3>Từ khóa</h3><span class="line"></span></div>
+      <div class="keywords">
+        <a href="giaodienchinh.html?q=ký ức">ký ức</a>
+        <a href="giaodienchinh.html?cat=tac-pham">hoài niệm</a>
+        <a href="giaodienchinh.html?q=thế hệ">thế hệ</a>
+        <a href="giaodienchinh.html?cat=tac-pham">ca khúc</a>
+        <a href="giaodienchinh.html?q=âm nhạc">âm nhạc Việt Nam</a>
+      </div>
+    </section>
+
+    <section class="side-box newsletter-box">
+      <h3>Đồng hành cùng<br>Giai Điệu Việt</h3>
+      <p>Đăng ký để nhận những bài viết mới nhất về âm nhạc và văn hóa âm nhạc Việt Nam.</p>
+      <form id="newsletterForm" novalidate>
+        <input type="email" id="emailInput" placeholder="Nhập email của bạn..." aria-label="Email">
+        <button type="submit" class="btn-primary">Đăng ký <span>→</span></button>
+        <small class="form-msg" id="formMsg" aria-live="polite"></small>
+      </form>
+      <svg class="lotus" viewBox="0 0 100 80" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M50 70 C40 55 40 35 50 15 C60 35 60 55 50 70z"/><path d="M50 70 C32 62 22 45 25 28 C40 35 48 52 50 70z"/><path d="M50 70 C68 62 78 45 75 28 C60 35 52 52 50 70z"/><path d="M50 70 C25 70 10 58 8 45 C25 45 42 55 50 70z"/><path d="M50 70 C75 70 90 58 92 45 C75 45 58 55 50 70z"/></g></svg>
+    </section>
+
+    <!-- Bài viết được xem nhiều: để TRỐNG, baiviet.js tự điền từ data.js -->
+    <section class="side-box small">
+      <div class="side-head"><h3>Bài viết được xem nhiều</h3></div>
+      <ol class="top-list" id="topList"></ol>
+    </section>
+  </aside>
+</div>
+
+<!-- ================= THANH CÔNG CỤ DƯỚI (FOOTER) – giữ nguyên ở mọi bài ================= -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="giaodienchinh.html" class="logo logo-light" aria-label="Giai Điệu Việt – về trang chủ">
+      <svg class="logo-icon" viewBox="0 0 64 64" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M44 6 L28 30"/><path d="M40 4 L48 10"/></g>
+        <ellipse cx="22" cy="42" rx="14" ry="16" transform="rotate(35 22 42)" fill="currentColor"/>
+        <circle cx="21" cy="42" r="3.5" fill="#7a2420"/>
+        <path d="M6 54 C20 62 40 58 60 44" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text"><span class="logo-top">GIAI ĐIỆU</span><span class="logo-bottom">VIỆT</span></span>
+    </a>
+    <p class="slogan">“Nghe một giai điệu, hiểu một câu chuyện”</p>
+    <ul class="footer-links">
+      <li><a href="#">Giới thiệu</a></li>
+      <li><a href="#">Liên hệ</a></li>
+      <li><a href="#">Chính sách bảo mật</a></li>
+    </ul>
+    <div class="socials socials-light">
+      <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"/></svg></a>
+      <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8C22 15.2 22 12 22 12s0-3.2-.4-4.8zM10 15V9l5.2 3z"/></svg></a>
+      <a href="https://spotify.com" target="_blank" rel="noopener" aria-label="Spotify"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.8.2c-2.2-1.3-4.9-1.6-8.1-.9a.6.6 0 1 1-.3-1.2c3.5-.8 6.5-.5 9 1a.6.6 0 0 1 .2.9zm1.2-2.7a.8.8 0 0 1-1 .3c-2.5-1.5-6.3-2-9.2-1.1a.8.8 0 0 1-.5-1.5c3.4-1 7.6-.5 10.5 1.3.4.2.5.7.2 1zm.1-2.8C14.900 9.100 10 8.900 7.200 9.800a1 1 0 1 1-.6-1.900c3.200-1 8.600-.8 12 1.200a1 1 0 0 1-1 1.800z"/></svg></a>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Giai Điệu Việt</p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- Thứ tự quan trọng: data.js TRƯỚC, baiviet.js SAU -->
+<script src="js/data.js"></script>
+<script src="js/baiviet.js"></script>
+<script src="js/effects.js"></script>
+</body>
+</html>

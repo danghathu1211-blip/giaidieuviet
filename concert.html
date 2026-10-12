@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Văn hóa đi concert của giới trẻ Việt Nam đang thay đổi ra sao? – Giai Điệu Việt</title>
+<meta name="description" content="Nếu trước đây thưởng thức âm nhạc thường gắn với radio, truyền hình hoặc tai nghe cá nhân, ngày nay nhiều người trẻ sẵn sàng dành thời gian và chi phí để đến...">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&family=Noto+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/baiviet.css">
+<link rel="stylesheet" href="css/effects.css">
+</head>
+
+<!-- [ĐỔI 1] data-id = mã bài trong js/data.js.
+     data-related (tuỳ chọn) = tự chọn bài liên quan; bỏ đi thì tự lấy bài cùng chuyên mục -->
+<body data-id="concert">
+
+<div class="read-progress" id="readProgress"></div>
+
+<!-- ================= THANH CÔNG CỤ TRÊN (HEADER) – giữ nguyên ở mọi bài ================= -->
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a href="giaodienchinh.html" class="logo" aria-label="Giai Điệu Việt – về trang chủ">
+      <svg class="logo-icon" viewBox="0 0 64 64" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M44 6 L28 30"/><path d="M40 4 L48 10"/></g>
+        <ellipse cx="22" cy="42" rx="14" ry="16" transform="rotate(35 22 42)" fill="currentColor"/>
+        <circle cx="21" cy="42" r="3.5" fill="#f8f1ea"/>
+        <path d="M6 54 C20 62 40 58 60 44" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text"><span class="logo-top">GIAI ĐIỆU</span><span class="logo-bottom">VIỆT</span></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="giaodienchinh.html">Trang chủ</a></li>
+        <li><a href="giaodienchinh.html?cat=dong-chay" data-cat="dong-chay">Dòng chảy</a></li>
+        <li><a href="giaodienchinh.html?cat=guong-mat" data-cat="guong-mat">Gương mặt</a></li>
+        <li><a href="giaodienchinh.html?cat=tac-pham" data-cat="tac-pham">Tác phẩm</a></li>
+        <li><a href="giaodienchinh.html?cat=van-hoa" data-cat="van-hoa">Văn hóa</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-tools">
+      <form class="search-box" action="giaodienchinh.html" method="get" role="search">
+        <input type="text" name="q" placeholder="Tìm kiếm..." aria-label="Tìm kiếm">
+        <button type="submit" aria-label="Tìm"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+      </form>
+      <div class="socials">
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"/></svg></a>
+        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8C22 15.2 22 12 22 12s0-3.2-.4-4.8zM10 15V9l5.2 3z"/></svg></a>
+        <a href="https://spotify.com" target="_blank" rel="noopener" aria-label="Spotify"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.8.2c-2.2-1.3-4.9-1.6-8.1-.9a.6.6 0 1 1-.3-1.2c3.5-.8 6.5-.5 9 1a.6.6 0 0 1 .2.9zm1.2-2.7a.8.8 0 0 1-1 .3c-2.5-1.5-6.3-2-9.2-1.1a.8.8 0 0 1-.5-1.5c3.4-1 7.6-.5 10.5 1.3.4.2.5.7.2 1zm.1-2.8C14.900 9.100 10 8.900 7.200 9.800a1 1 0 1 1-.6-1.900c3.200-1 8.600-.8 12 1.200a1 1 0 0 1-1 1.800z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= NỘI DUNG BÀI VIẾT ================= -->
+<div class="container article-layout">
+
+  <article class="article">
+    <a href="giaodienchinh.html" class="back-link"><span>←</span> Quay lại</a>
+
+    <!-- [ĐỔI 2] chuyên mục: nhãn + link + màu (tag-red / tag-gold / tag-green) -->
+    <a href="giaodienchinh.html?cat=van-hoa" class="tag tag-green">VĂN HÓA</a>
+
+    <!-- [ĐỔI 3] tiêu đề + đoạn mở đầu -->
+    <h1 class="article-title">Văn hóa đi concert của giới trẻ<br>Việt Nam đang thay đổi ra sao?</h1>
+    <p class="article-lede">Nếu trước đây thưởng thức âm nhạc thường gắn với radio, truyền hình hoặc tai nghe cá nhân, ngày nay nhiều người trẻ sẵn sàng dành thời gian và chi phí để đến một concert. Đi xem nhạc không còn đơn thuần là nghe nghệ sĩ biểu diễn mà đang trở thành một trải nghiệm văn hóa, xã hội và cộng đồng.</p>
+
+    <!-- [ĐỔI 4] tác giả + ngày đăng -->
+    <div class="article-meta">
+      <div class="author">
+        <span class="avatar" aria-hidden="true">TH</span>
+        <div><strong>Đặng Hà Thu</strong><small>Biên tập viên</small></div>
+      </div>
+      <time class="meta-item" datetime="2026-10-05"><i class="ico ico-cal"></i>05.10.2026</time>
+      <span class="meta-item"><i class="ico ico-clock"></i><span id="readTime">8 phút đọc</span></span>
+      <div class="share">
+        <span>Chia sẻ:</span>
+        <button type="button" class="share-btn" id="shareFb" aria-label="Chia sẻ lên Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"/></svg></button>
+        <button type="button" class="share-btn plain" id="copyLink" aria-label="Sao chép liên kết"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.700 0l3-3a4 4 0 0 0-5.700-5.700l-1 1"/><path d="M14 10a4 4 0 0 0-5.700 0l-3 3a4 4 0 0 0 5.700 5.700l1-1"/></svg></button>
+        <button type="button" class="share-btn plain" id="bookmark" aria-label="Lưu bài viết" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+      </div>
+    </div>
+
+    <!-- [ĐỔI 5] ảnh chính + chú thích -->
+    <figure class="article-hero">
+      <div class="hero-img"><img src="images/concert1.jpg" alt="Văn hóa đi concert của giới trẻ Việt Nam"></div>
+      <figcaption>Đi concert đang trở thành một trải nghiệm văn hóa, xã hội và cộng đồng của người trẻ.</figcaption>
+    </figure>
+
+    <!-- [ĐỔI 6] nội dung bài: mỗi mục là 1 thẻ <h2> + các đoạn <p> -->
+    <div class="article-body" id="articleBody">
+      <h2>Từ nghe nhạc đến trải nghiệm trực tiếp</h2>
+      <p>Sự phát triển của nền tảng số giúp âm nhạc trở nên dễ tiếp cận hơn bao giờ hết. Người nghe có thể mở một ca khúc bất cứ lúc nào mà không cần đến sân khấu.</p>
+      <p>Chính sự tiện lợi ấy lại làm trải nghiệm trực tiếp trở nên đặc biệt hơn.</p>
+      <p>Một concert cho phép khán giả nhìn thấy nghệ sĩ, nghe âm thanh trong không gian lớn, cùng hát với hàng nghìn người và cảm nhận bầu không khí mà bản ghi âm không thể tái tạo hoàn toàn.</p>
+      <p>Vì thế, người trẻ đến concert không chỉ để “nghe bài hát”. Họ tìm kiếm cảm giác được trực tiếp tham gia vào một sự kiện mà nhiều người cùng chia sẻ.</p>
+
+      <h2>Concert trở thành một hoạt động xã hội</h2>
+      <p>Một thay đổi đáng chú ý là concert ngày càng trở thành dịp để bạn bè gặp gỡ và tạo ra trải nghiệm chung.</p>
+      <p>Khán giả có thể chuẩn bị trang phục, lightstick, phụ kiện hoặc những món đồ liên quan đến nghệ sĩ. Trước và sau sự kiện, họ tiếp tục chia sẻ hình ảnh, video và cảm nhận trên mạng xã hội.</p>
+          <figure class="article-hero">
+      <div class="hero-img"><img src="images/concert2.jpg" alt="Văn hóa đi concert của giới trẻ Việt Nam"></div>
+      <figcaption>Lightstick của Sơn Tùng MTP.</figcaption>
+    </figure>
+      <p>Điều này tạo nên vòng đời dài hơn cho một đêm nhạc. Sự kiện không kết thúc hoàn toàn khi sân khấu đóng lại mà tiếp tục tồn tại thông qua nội dung do khán giả tạo ra.</p>
+      <p>Concert vì thế vừa là trải nghiệm trực tiếp vừa là nội dung trên môi trường số.</p>
+
+      <h2>Khi khán giả trở thành một phần của sân khấu</h2>
+      <p>Một concert thành công không chỉ phụ thuộc vào nghệ sĩ. Khán giả cũng góp phần tạo nên không khí của chương trình.</p>
+      <p>Những màn hát theo, tiếng reo hò, ánh sáng từ khán đài hay các hoạt động đồng loạt của người hâm mộ khiến trải nghiệm biểu diễn trở nên khác biệt.</p>
+      <p>Ở đây xuất hiện một sự thay đổi trong vai trò của công chúng. Khán giả không còn hoàn toàn thụ động tiếp nhận sản phẩm. Họ tham gia tạo nên trải nghiệm và sau đó tiếp tục lan tỏa nó trên mạng xã hội.</p>
+
+      <h2>Concert và sự phát triển của văn hóa fandom</h2>
+      <p>Sự phát triển của concert cũng gắn với sự trưởng thành của cộng đồng người hâm mộ.</p>
+      <p>Một số fandom hiện nay có thể tổ chức các hoạt động đón nghệ sĩ, chuẩn bị dự án cổ vũ, quà tặng tập thể hoặc những chiến dịch cộng đồng. Báo Nhân Dân năm 2026 ghi nhận sự xuất hiện của khái niệm “Fandom Prosumer”, nhấn mạnh vai trò ngày càng chủ động của người hâm mộ trong việc tạo nội dung, lan tỏa và hỗ trợ hoạt động của nghệ sĩ.</p>
+          <figure class="article-hero">
+      <div class="hero-img"><img src="images/concert3.jpg" alt="Văn hóa đi concert của giới trẻ Việt Nam"></div>
+      <figcaption>Concert mang đến trải nghiệm thưởng thức âm nhạc trực tiếp.</figcaption>
+    </figure>
+      <p>Như vậy, concert không chỉ là nơi nghệ sĩ biểu diễn trước khán giả. Nó còn là không gian để cộng đồng người hâm mộ thể hiện sự gắn kết.</p>
+
+      <h2>Một trải nghiệm văn hóa có giá trị riêng</h2>
+      <p>Khi đi concert trở thành một hoạt động phổ biến hơn, cách khán giả đánh giá một chương trình cũng thay đổi.</p>
+      <p>Họ quan tâm không chỉ đến danh sách bài hát mà còn đến sân khấu, âm thanh, ánh sáng, hình ảnh, cách tổ chức và trải nghiệm tổng thể.</p>
+      <p>Điều này thúc đẩy nghệ sĩ và đơn vị tổ chức đầu tư nhiều hơn vào việc xây dựng concert như một sản phẩm văn hóa – giải trí hoàn chỉnh.</p>
+      <p>Đồng thời, khán giả cũng ngày càng chủ động hơn trong việc lựa chọn sự kiện phù hợp với sở thích và khả năng của mình.</p>
+
+      <h2>Concert không chỉ là một đêm nhạc</h2>
+      <p>Văn hóa đi concert cho thấy cách người trẻ đang thay đổi mối quan hệ với âm nhạc. Trong khi streaming mang đến sự thuận tiện của việc nghe một mình, concert mang đến trải nghiệm cộng đồng mà công nghệ cá nhân khó thay thế.</p>
+                <figure class="article-hero">
+      <div class="hero-img"><img src="images/concert4.jpg" alt="Văn hóa đi concert của giới trẻ Việt Nam"></div>
+      <figcaption>Không gian biểu diễn cũng là nơi người hâm mộ kết nối với nhau.</figcaption>
+    </figure>
+      <p>Một đêm nhạc có thể kết thúc sau vài giờ, nhưng ký ức về không gian, những người cùng tham dự và khoảnh khắc nghệ sĩ xuất hiện trên sân khấu có thể ở lại lâu hơn.</p>
+      <p>Đó là lúc âm nhạc vượt khỏi chiếc tai nghe để trở thành một phần của đời sống xã hội.</p>
+    </div>
+  </article>
+
+  <!-- ================= THANH CÔNG CỤ BÊN (SIDEBAR) ================= -->
+  <aside class="sidebar">
+
+    <!-- Bài viết liên quan: để TRỐNG, baiviet.js tự điền từ data.js -->
+    <section class="side-box">
+      <div class="side-head"><h3>Bài viết liên quan</h3><span class="line"></span><a href="giaodienchinh.html" id="relatedMore" aria-label="Xem thêm">→</a></div>
+      <ul class="related" id="relatedList"></ul>
+    </section>
+
+    <!-- [ĐỔI 7] từ khóa (bấm sẽ sang trang chủ và lọc bài) -->
+    <section class="side-box small">
+      <div class="side-head"><h3>Từ khóa</h3><span class="line"></span></div>
+      <div class="keywords">
+        <a href="giaodienchinh.html?q=concert">concert</a>
+        <a href="giaodienchinh.html?q=trẻ">giới trẻ</a>
+        <a href="giaodienchinh.html?cat=van-hoa">fandom</a>
+        <a href="giaodienchinh.html?cat=van-hoa">mạng xã hội</a>
+        <a href="giaodienchinh.html?cat=van-hoa">văn hóa âm nhạc</a>
+      </div>
+    </section>
+
+    <section class="side-box newsletter-box">
+      <h3>Đồng hành cùng<br>Giai Điệu Việt</h3>
+      <p>Đăng ký để nhận những bài viết mới nhất về âm nhạc và văn hóa âm nhạc Việt Nam.</p>
+      <form id="newsletterForm" novalidate>
+        <input type="email" id="emailInput" placeholder="Nhập email của bạn..." aria-label="Email">
+        <button type="submit" class="btn-primary">Đăng ký <span>→</span></button>
+        <small class="form-msg" id="formMsg" aria-live="polite"></small>
+      </form>
+      <svg class="lotus" viewBox="0 0 100 80" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M50 70 C40 55 40 35 50 15 C60 35 60 55 50 70z"/><path d="M50 70 C32 62 22 45 25 28 C40 35 48 52 50 70z"/><path d="M50 70 C68 62 78 45 75 28 C60 35 52 52 50 70z"/><path d="M50 70 C25 70 10 58 8 45 C25 45 42 55 50 70z"/><path d="M50 70 C75 70 90 58 92 45 C75 45 58 55 50 70z"/></g></svg>
+    </section>
+
+    <!-- Bài viết được xem nhiều: để TRỐNG, baiviet.js tự điền từ data.js -->
+    <section class="side-box small">
+      <div class="side-head"><h3>Bài viết được xem nhiều</h3></div>
+      <ol class="top-list" id="topList"></ol>
+    </section>
+  </aside>
+</div>
+
+<!-- ================= THANH CÔNG CỤ DƯỚI (FOOTER) – giữ nguyên ở mọi bài ================= -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="giaodienchinh.html" class="logo logo-light" aria-label="Giai Điệu Việt – về trang chủ">
+      <svg class="logo-icon" viewBox="0 0 64 64" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M44 6 L28 30"/><path d="M40 4 L48 10"/></g>
+        <ellipse cx="22" cy="42" rx="14" ry="16" transform="rotate(35 22 42)" fill="currentColor"/>
+        <circle cx="21" cy="42" r="3.5" fill="#7a2420"/>
+        <path d="M6 54 C20 62 40 58 60 44" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text"><span class="logo-top">GIAI ĐIỆU</span><span class="logo-bottom">VIỆT</span></span>
+    </a>
+    <p class="slogan">“Nghe một giai điệu, hiểu một câu chuyện”</p>
+    <ul class="footer-links">
+      <li><a href="#">Giới thiệu</a></li>
+      <li><a href="#">Liên hệ</a></li>
+      <li><a href="#">Chính sách bảo mật</a></li>
+    </ul>
+    <div class="socials socials-light">
+      <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"/></svg></a>
+      <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8C22 15.2 22 12 22 12s0-3.2-.4-4.8zM10 15V9l5.2 3z"/></svg></a>
+      <a href="https://spotify.com" target="_blank" rel="noopener" aria-label="Spotify"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.8.2c-2.2-1.3-4.9-1.6-8.1-.9a.6.6 0 1 1-.3-1.2c3.5-.8 6.5-.5 9 1a.6.6 0 0 1 .2.9zm1.2-2.7a.8.8 0 0 1-1 .3c-2.5-1.5-6.3-2-9.2-1.1a.8.8 0 0 1-.5-1.5c3.4-1 7.6-.5 10.5 1.3.4.2.5.7.2 1zm.1-2.8C14.900 9.100 10 8.900 7.200 9.800a1 1 0 1 1-.6-1.900c3.200-1 8.600-.8 12 1.200a1 1 0 0 1-1 1.800z"/></svg></a>
+    </div>
+  </div>
+  <p class="copyright">© 2025 Giai Điệu Việt</p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- Thứ tự quan trọng: data.js TRƯỚC, baiviet.js SAU -->
+<script src="js/data.js"></script>
+<script src="js/baiviet.js"></script>
+<script src="js/effects.js"></script>
+</body>
+</html>
